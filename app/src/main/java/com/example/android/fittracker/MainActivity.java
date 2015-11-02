@@ -13,13 +13,14 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText userNameField = (EditText) findViewById(R.id.name_field);
+    EditText userNameField;
     public static final String NAME_KEY = "com.example.android.fittracker.name_key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        userNameField = (EditText) findViewById(R.id.name_field);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -59,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     * Sends the user info from text fields
     * */
     public void sendUserInfo(){
-        userNameField = (EditText) findViewById(R.id.name_field);
         String userName = userNameField.getText().toString();
 
         Intent nameIntent = new Intent(this, SecondActivity.class);
